@@ -1,1 +1,24 @@
-<p>character works!</p>
+<div class="character-container" *ngIf="character">
+  <img src="{{character.image}}" alt="">
+  <h1>{{character.name}}</h1>
+  <span>specie: {{character.species}}</span>
+  <span>genere: {{character.gender}}</span>
+  <div>
+    <span>Origin: {{character.origin.name}}</span>
+    <button (click)="navigateToOrigin()" mat-icon-button>
+      <mat-icon>near_me</mat-icon>
+    </button>
+  </div>
+  <div>
+    <span>Location: {{character.location.name}}</span>
+    <button (click)="navigateToLocation()" mat-icon-button>
+      <mat-icon>near_me</mat-icon>
+    </button>
+  </div>
+  <div>
+    <h2>episodi</h2>
+    <ul>
+      <li *ngFor="let episode of character.episode">{{episode}}</li>
+    </ul>
+  </div>
+</div>

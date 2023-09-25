@@ -7,11 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CharactersListComponent } from './components/characters-list/characters-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+
 import { HttpClientModule } from '@angular/common/http';
-import {MatCardModule} from '@angular/material/card';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -24,11 +23,8 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
     HttpClientModule,
-    MatCardModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
