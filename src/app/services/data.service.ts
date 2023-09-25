@@ -18,12 +18,6 @@ export class DataService {
     this.getAllCharacters();
   }
 
-  // getAllCharacters(): Observable<CharacterDetail[]>{
-  //   return this.http.get<any>(this.BASE_URL + 'character?page=' + this.pageNumber).pipe(
-  //     map(data => data.results)
-  //   );
-  // }
-
   getAllCharacters(): void{
     this.http.get<any>(this.BASE_URL + 'character?page=' + this.pageNumber).pipe(
       map(data => data.results)
@@ -33,12 +27,19 @@ export class DataService {
   previousPage(){
     if (this.pageNumber>1) {
       this.pageNumber--;
-      this.getAllCharacters()
+      this.getAllCharacters();
     }
   }
 
   nextPage(){
     this.pageNumber++;
-    this.getAllCharacters()
+    this.getAllCharacters();
   }
+
+    // getAllCharacters(): Observable<CharacterDetail[]>{
+  //   return this.http.get<any>(this.BASE_URL + 'character?page=' + this.pageNumber).pipe(
+  //     map(data => data.results)
+  //   );
+  // }
+
 }

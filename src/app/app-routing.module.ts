@@ -5,6 +5,7 @@ import { CharactersListComponent } from './components/characters-list/characters
 const routes: Routes = [
   {path: 'home', component: CharactersListComponent},
   {path: '', redirectTo:'/home', pathMatch:'full'},
+  {path: 'character', loadChildren: () => import('./components/character/character.module').then(m => m.CharacterModule) },
   {path: '**', redirectTo: '/home'}
 ];
 
